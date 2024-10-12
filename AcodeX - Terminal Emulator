@@ -1,0 +1,110 @@
+curl -sL https://raw.githubusercontent.com/bajrangCoder/acode-plugin-acodex/main/installServer.sh | bash
+
+pkg update && pkg upgrade -y
+pkg install python nodejs -y
+npm i -g acodex-server
+pkg install tigervnc -y
+curl -L https://raw.githubusercontent.com/bajrangCoder/websockify_rs/main/install.sh | bash
+
+
+
+cd $HOME && mkdir -p .gyp && echo "{'variables': {'android_ndk_path': ''}}" > .gyp/include.gypi
+
+
+
+pkg install tigervnc -y
+curl -L https://raw.githubusercontent.com/bajrangCoder/websockify_rs/main/install.sh | bash
+
+vncserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const acodex = acode.require("acodex");
+
+acodex.execute("ls"); // execute the ls command in terminal
+const isMinimized = acodex.isMinimized();
+const isOpened = acodex.isTerminalOpened();
+acodex.maximiseTerminal();
+
+const session = await acodex.openTerminal();
+session.onmessage(data => console.log(data));
+session.write("ls");
+
+const sessionSocket = await acodex.createSession();
+sessionSocket.onmessage(data => console.log(data));
+sessionSocket.write("ls");
+
+const changeSessionSocket = await acodex.changeSession("AcodeX2");
+changeSessionSocket.onmessage(data => console.log(data));
+changeSessionSocket.write("ls");
+
+acodex.closeTerminal();
+const termReadablePath = acodex.convertAcodeUriToTermReadable("file://storage/emulated/0/myTheme/acode/file/path");
+acodex.addTheme("myTheme", { background: "#fff", text: "#000" }); // you can find more colors in themes.js
+acodex.applyTheme("myTheme");
+
+
+@font-face {
+    font-family: "MesloLGS NF Regular";
+    src: url("./MesloLGS NF Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+git clone https://github.com/bajrangCoder/acode-plugin-acodex.git
+pnpm install
+pnpm build
